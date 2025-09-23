@@ -19,7 +19,7 @@ const AboutPage = () => {
       description: "Cutoff analysis and prediction algorithms",
     },
     {
-      name: "Soham Khare",
+      name: "Pranav Ozarde",
       role: "Full Stack Developer",
       description: "System architecture and integration",
     },

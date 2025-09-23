@@ -6,7 +6,7 @@ const Footer = () => {
           <p className="text-muted-foreground text-sm">
             © 2024 MHT-CET College Predictor. Built by{" "}
             <span className="text-primary font-medium">
-              Abhishek Gaikwad, Sarthak Kad, Shivaraj Phatangare, Soham Khare
+              Abhishek Gaikwad, Sarthak Kad, Shivaraj Phatangare, Pranav Ozarde
             </span>
           </p>
         </div>
