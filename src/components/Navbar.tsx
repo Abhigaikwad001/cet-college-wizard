@@ -1,14 +1,22 @@
 import { Link, useLocation } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+import { useAuth } from "@/hooks/useAuth";
 
 const Navbar = () => {
   const location = useLocation();
+  const { user, signOut } = useAuth();
 
   const navItems = [
     { path: "/", label: "Home" },
     { path: "/predict", label: "Predict" },
-    { path: "/results", label: "Results" },
+    { path: "/comparison", label: "Compare" },
+    { path: "/counseling", label: "Counseling" },
     { path: "/about", label: "About" },
   ];
+
+  if (user) {
+    navItems.splice(3, 0, { path: "/bookmarks", label: "Saved" });
+  }
 
   return (
     <nav className="bg-card/80 backdrop-blur-sm border-b border-border sticky top-0 z-50">
@@ -20,8 +28,8 @@ const Navbar = () => {
             </div>
           </Link>
           
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-4">
+          <div className="hidden md:flex items-center space-x-4">
+            <div className="flex items-baseline space-x-4">
               {navItems.map((item) => (
                 <Link
                   key={item.path}
@@ -36,6 +44,15 @@ const Navbar = () => {
                 </Link>
               ))}
             </div>
+            {user ? (
+              <Button variant="outline" size="sm" onClick={signOut}>
+                Logout
+              </Button>
+            ) : (
+              <Link to="/auth">
+                <Button variant="outline" size="sm">Login</Button>
+              </Link>
+            )}
           </div>
           
           {/* Mobile menu button */}

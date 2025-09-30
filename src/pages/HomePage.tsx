@@ -1,11 +1,15 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { AdmissionAlerts } from "@/components/AdmissionAlerts";
 
 const HomePage = () => {
   return (
     <div className="min-h-screen flex flex-col">
       {/* Hero Section */}
       <div className="flex-1 bg-gradient-hero relative overflow-hidden">
+        <div className="absolute top-4 left-0 right-0 z-10 max-w-7xl mx-auto px-4">
+          <AdmissionAlerts />
+        </div>
         <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-24">
           <div className="text-center animate-fade-in">
